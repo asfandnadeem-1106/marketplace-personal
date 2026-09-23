@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#131921" />
+  <title>Shoply — Everything, delivered.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Shoply home"><span class="brand-mark">s</span><span>shoply<span class="brand-dot">.</span></span></a>
+    <button class="location" id="locationButton"><span class="pin">⌖</span><span><small>Deliver to</small><b>Asfand · Pakistan</b></span></button>
+    <form class="search" id="searchForm"><select id="categorySelect" aria-label="Search category"><option value="all">All</option></select><input id="searchInput" placeholder="Search Shoply" autocomplete="off" /><button aria-label="Search">⌕</button></form>
+    <button class="header-link account-link" id="accountButton"><small id="accountGreeting">Hello, sign in</small><b>Account & Lists⌄</b></button>
+    <button class="header-link orders-link" id="ordersButton"><small>Returns</small><b>& Orders</b></button>
+    <button class="cart-link" id="cartButton"><span class="cart-icon">🛒</span><span class="cart-count" id="cartCount">0</span><b>Cart</b></button>
+  </header>
+  <nav class="subnav"><button class="menu-btn" id="menuButton">☰ <b>All</b></button><div id="categoryNav"></div><button class="nav-promo" data-category="Deals">Today's Deals</button><button class="nav-promo" id="sellerButton">Sell on Shoply</button><button class="nav-promo admin-nav" id="adminButton">Admin demo</button></nav>
+  <div class="department-menu" id="departmentMenu" hidden><span class="eyebrow">SHOP BY DEPARTMENT</span><div id="departmentMenuItems"></div></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-content"><span class="eyebrow">THE EVERYDAY EDIT · 2026</span><h1>Good finds.<br /><em>Better days.</em></h1><p>Thoughtful picks for your space, your style, and everything in between.</p><button class="primary-btn" id="heroShop">Explore the collection <span>→</span></button><div class="hero-note"><span class="note-stars">★★★★★</span> Loved by 12,000+ happy shoppers</div></div>
+      <div class="hero-visual"><div class="sun-shape"></div><div class="hero-product hero-product-one"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85" alt="Wireless headphones" /></div><div class="hero-product hero-product-two"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=85" alt="Minimal wristwatch" /></div><div class="floating-tag"><span>✦</span> CURATED FOR YOU</div><div class="hero-scribble">little things,<br />big joy <span>↗</span></div></div>
+      <div class="hero-bottom"><span>01 <i></i> 03</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
+
+    <section class="benefits"><div><span>✦</span><b>Free delivery</b><small>on orders over PKR 5,000</small></div><div><span>↺</span><b>Easy 30-day returns</b><small>shop with confidence</small></div><div><span>♡</span><b>Handpicked quality</b><small>only things we'd buy</small></div><div><span>☏</span><b>Here to help</b><small>real people, real support</small></div></section>
+
+    <section class="category-section"><div class="section-heading"><div><span class="eyebrow">A LITTLE BIT OF EVERYTHING</span><h2>Browse by mood</h2></div><button class="text-button" id="browseAll">View all categories <span>→</span></button></div><div class="category-cards" id="categoryCards"></div></section>
+
+    <section class="products-section" id="productsSection"><div class="section-heading product-heading"><div><span class="eyebrow">GOOD THINGS, RIGHT THIS WAY</span><h2 id="listingTitle">Our everyday favourites</h2><p class="listing-subtitle" id="listingSubtitle">A few things we think you'll love.</p></div><div class="sort-area"><span id="resultCount"></span><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option><option value="newest">Newest arrivals</option></select></div></div><div class="listing-layout"><aside class="filters" id="filters"><div class="filter-top"><b>Filters</b><button id="clearFilters">Clear all</button></div><div class="filter-group"><b>Category</b><div id="categoryFilters"></div></div><div class="filter-group"><b>Price range</b><div class="price-inputs"><label>PKR <input id="minPrice" type="number" placeholder="0" /></label><span>–</span><label>PKR <input id="maxPrice" type="number" placeholder="Any" /></label></div><button class="apply-filter" id="applyPrice">Apply</button></div><div class="filter-group"><b>Customer rating</b><button class="rating-filter" data-rating="4">★★★★☆ <small>& up</small></button><button class="rating-filter" data-rating="3">★★★☆☆ <small>& up</small></button></div><div class="filter-group"><b>Availability</b><label class="check-row"><input type="checkbox" id="inStockFilter" /> In stock only</label></div><div class="filter-note">All prices shown in PKR. Delivery options shown at checkout.</div></aside><div class="product-grid" id="productGrid"></div></div></section>
+
+    <section class="story-banner"><div><span class="eyebrow">MADE FOR YOUR EVERYDAY</span><h2>It's the little<br />things that make it.</h2><p>Meet the pieces you'll reach for, live in, and wonder how you did without.</p><button class="light-btn" id="storyShop">Shop the edit <span>→</span></button></div><div class="story-image"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=85" alt="Warm, thoughtfully styled home" /></div><div class="story-label">HOME IS A FEELING · VOL. 01</div></section>
+
+    <section class="recently-viewed" id="recentSection" hidden><div class="section-heading"><div><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h2>Recently viewed</h2></div></div><div class="product-grid recent-grid" id="recentGrid"></div></section>
+    <section class="newsletter"><div><span class="eyebrow">A GOOD NOTE IN YOUR INBOX</span><h2>Stay in the know.</h2><p>New finds, good stories, and 10% off your first order.</p></div><form id="newsletterForm"><input type="email" placeholder="Your email address" required /><button>Count me in <span>→</span></button></form><small id="newsletterMessage"></small></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">s</span><span>shoply<span class="brand-dot">.</span></span></a><p>Everyday things, a little more lovely.</p><div class="footer-links"><a href="#productsSection">Shop</a><a href="#">Our story</a><a href="#">Help & contact</a><a href="#">Privacy</a></div><small>© 2026 Shoply Marketplace · Built for good finds.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart"><div class="drawer-header"><div><span class="eyebrow">YOUR BAG</span><h2>Your cart <span id="drawerItemCount"></span></h2></div><button class="close-btn" id="closeCart">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-empty" id="cartEmpty"><span>♡</span><h3>A little room for something lovely.</h3><p>Your cart is waiting for its first find.</p><button class="primary-btn" id="continueShopping">Keep exploring <span>→</span></button></div><div class="cart-summary" id="cartSummary"><div><span>Subtotal</span><b id="cartSubtotal"></b></div><small>Delivery and taxes calculated at checkout.</small><button class="primary-btn checkout-button" id="checkoutButton">Continue to checkout <span>→</span></button><button class="text-button continue-link" id="continueShopping2">Continue shopping</button></div></aside>
+  <div class="modal-wrap" id="modalWrap"><div class="modal" id="modal"><button class="close-btn modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
