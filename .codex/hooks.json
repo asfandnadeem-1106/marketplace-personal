@@ -1,0 +1,27 @@
+{
+  "description": "Capture each Codex prompt and final response for the 8x assignment.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/capture-session.mjs\" prompt",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/capture-session.mjs\" response",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
